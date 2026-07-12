@@ -316,6 +316,7 @@
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.1; } }
         .sub-text { font-size: 1rem; color: #8ba0c9; max-width: 400px; margin-top: 0.8rem; opacity: 0.8; }
 
+        /* Desktop buttons */
         .hero-btns { display: flex; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
         .hero-btn {
             padding: 0.7rem 2rem;
@@ -341,6 +342,68 @@
         .hero-btn.secondary-btn { background: rgba(255,255,255,0.05); color: #c0d0ec; border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(4px); }
         .hero-btn.secondary-btn:hover { transform: translateY(-3px) scale(1.03); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: #ffffff; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
         .hero-btns .hero-btn { opacity: 1 !important; visibility: visible !important; display: inline-flex !important; }
+
+        /* Main Hero Buttons - Get Started & View Portfolio */
+        .hero-main-btns {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-main-btns .btn-premium {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 20, 80, 0.2);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+        .hero-main-btns .btn-premium i {
+            transition: transform 0.3s;
+        }
+        .hero-main-btns .btn-premium:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 120, 255, 0.3);
+            border-color: rgba(100, 180, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .hero-main-btns .btn-premium:hover i {
+            transform: translateX(4px);
+        }
+        .hero-main-btns .btn-primary-glow {
+            background: linear-gradient(135deg, #2b6eff, #7b3eff);
+            border: none;
+            color: white;
+            box-shadow: 0 8px 32px rgba(43, 110, 255, 0.3);
+        }
+        .hero-main-btns .btn-primary-glow:hover {
+            background: linear-gradient(135deg, #4a82ff, #9b5eff);
+            box-shadow: 0 12px 48px rgba(43, 110, 255, 0.5);
+            border-color: transparent;
+        }
+
+        /* ── Hide buttons on mobile ── */
+        @media (max-width: 768px) {
+            .hero-btns {
+                display: none !important;
+            }
+            .hero-main-btns {
+                display: none !important;
+            }
+        }
 
         .scroll-indicator {
             position: absolute;
@@ -877,7 +940,7 @@
             color: #4cd964;
         }
 
-        /* ── responsive (truncated for brevity - same as before) ── */
+        /* ── responsive ── */
         @media (max-width: 992px) {
             .left-col { padding: 1.5rem 1.2rem; min-height: auto; }
             .right-col { min-height: 45vh; padding: 0.5rem; }
@@ -904,7 +967,7 @@
 
         @media (max-width: 768px) {
             .businexx-header { padding: 0.5rem 0; }
-            .header-logo img { height: 36px; }
+            .header-logo img { height: 36px; padding-top: 10px;}
             .nav-links {
                 flex-direction: column;
                 align-items: flex-start;
@@ -969,8 +1032,6 @@
             .contact-form { padding: 1.2rem; }
             .footer-section { padding: 2rem 0 1rem 0; }
             .footer-section .footer-desc { max-width: 100%; }
-            .hero-btn { padding: 0.5rem 1.2rem; font-size: 0.8rem; }
-            .hero-btn i { font-size: 0.9rem; }
             .hero-floating-icons .float-icon { font-size: 1.5rem !important; }
         }
 
@@ -992,9 +1053,6 @@
             .typing-word { min-width: 90px; }
             .luxury-headline { font-size: 2rem; }
             .sub-text { font-size: 0.85rem; }
-            .hero-btns { gap: 0.6rem; margin-top: 0.8rem; }
-            .hero-btn { padding: 0.4rem 1rem; font-size: 0.7rem; border-radius: 40px; }
-            .hero-btn i { font-size: 0.8rem; }
             .hero-floating-icons .float-icon { font-size: 1.2rem !important; }
             .local-businesses { padding: 2rem 0 1.5rem 0; }
             .local-businesses .section-title { font-size: 1.2rem; margin-bottom: 0.8rem; }
@@ -1101,8 +1159,6 @@
             .pillar-card .pillar-name { font-size: 0.85rem; }
             .contact-info-item .ci-content .ci-value { font-size: 0.7rem; }
             .contact-btn { font-size: 0.65rem; padding: 0.4rem 0.8rem; }
-            .hero-btn { padding: 0.35rem 0.8rem; font-size: 0.65rem; }
-            .hero-btn i { font-size: 0.7rem; }
             .hero-floating-icons .float-icon { font-size: 1rem !important; }
         }
     </style>
@@ -1174,13 +1230,25 @@
                             <span class="typing-word" id="typingWord">Website</span>
                             <span class="cursor-blink" id="cursorBlink"></span>
                         </div>
-                        <p class="sub-text">High-end digital solutions · brand strategy · performance marketing</p>
+                        <p class="sub-text">High-end digital solutions · brand strategy</p>
+                        
+                        <!-- Hero Small Buttons (Free Quote & Grow My Business) - Desktop only -->
                         <div class="hero-btns">
                             <button class="hero-btn primary-btn" id="freeQuoteBtn">
                                 <i class="bi bi-chat-dots"></i> Free Quote
                             </button>
                             <button class="hero-btn secondary-btn" id="growBusinessBtn">
                                 <i class="bi bi-rocket-takeoff"></i> Grow My Business
+                            </button>
+                        </div>
+                        
+                        <!-- Hero Main Buttons (Get Started & View Portfolio) - Desktop only -->
+                        <div class="hero-main-btns">
+                            <button class="btn btn-premium btn-primary-glow" id="getStartedBtn">
+                                <i class="bi bi-arrow-right-circle"></i> Get Started
+                            </button>
+                            <button class="btn btn-premium" id="viewPortfolioBtn">
+                                <i class="bi bi-grid-3x3-gap-fill"></i> View Portfolio
                             </button>
                         </div>
                     </div>
@@ -2485,6 +2553,7 @@
         gsap.from('.typing-wrapper', { opacity: 0, y: 20, duration: 0.9, delay: 0.5, ease: 'power2.out' });
         gsap.from('.sub-text', { opacity: 0, y: 20, duration: 0.9, delay: 0.7, ease: 'power2.out' });
         gsap.from('.hero-btn', { opacity: 0, y: 20, duration: 0.7, stagger: 0.15, delay: 1.0, ease: 'power2.out' });
+        gsap.from('.hero-main-btns .btn-premium', { opacity: 0, y: 20, duration: 0.7, stagger: 0.15, delay: 1.2, ease: 'power2.out' });
         gsap.from('.scene-wrap', { opacity: 0, scale: 0.94, duration: 1.2, delay: 0.3, ease: 'power3.out' });
         gsap.from('.scroll-indicator', { opacity: 0, y: 20, duration: 1, delay: 1.6, ease: 'power2.out' });
         gsap.from('.header-logo', { opacity: 0, y: -20, duration: 0.8, delay: 0.2, ease: 'power2.out' });
@@ -2615,6 +2684,12 @@
         });
         document.getElementById('growBusinessBtn').addEventListener('click', () => {
             window.open('https://wa.me/923426438552?text=I%20want%20to%20grow%20my%20business%20with%20Businexx!', '_blank');
+        });
+        document.getElementById('getStartedBtn').addEventListener('click', () => {
+            alert('🚀 Businexx · premium digital growth. Get started with us!');
+        });
+        document.getElementById('viewPortfolioBtn').addEventListener('click', () => {
+            alert('📁 View our portfolio of successful projects.');
         });
 
         // Scene Accent
