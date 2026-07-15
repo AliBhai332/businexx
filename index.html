@@ -589,7 +589,7 @@
     .flip-card:hover .flip-front .card-glow { opacity: 0.06; }
     .flip-card .flip-hint { font-size: 0.6rem; opacity: 0.3; margin-top: 0.5rem; letter-spacing: 0.5px; text-transform: uppercase; }
 
-    /* ── PROCESS (NEW TIMELINE DESIGN) ── */
+    /* ── PROCESS (NEW TIMELINE) ── */
     .process-section {
       padding: 4rem 0 6rem 0;
       background: rgba(11, 13, 25, 0.3);
@@ -787,7 +787,7 @@
 
     /* ── PLANS ── */
     .plans-section {
-      padding: 4rem 0;
+      padding: 4rem 0 3rem 0;
       background: rgba(11, 13, 25, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       position: relative;
@@ -846,6 +846,79 @@
     .plan-card.premium .btn-choose:hover { box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4); }
     .plan-card { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1); }
     .plan-card.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── TRUSTED TOOLS SECTION (NEW) ── */
+    .tools-section {
+      padding: 0.8rem 0;
+      background: rgba(11, 13, 25, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      position: relative;
+      z-index: 5;
+      overflow: hidden;
+    }
+    .tools-section .tools-container {
+      position: relative;
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tools-section .tools-container .tool-icon {
+      position: absolute;
+      font-size: 2.2rem;
+      color: rgba(255, 255, 255, 0.25);
+      transition: all 0.3s ease;
+      animation: toolFloat 12s infinite alternate ease-in-out;
+      filter: drop-shadow(0 0 10px rgba(43, 110, 255, 0.05));
+    }
+    .tools-section .tools-container .tool-icon:hover {
+      color: rgba(43, 110, 255, 0.7);
+      transform: scale(1.25);
+      filter: drop-shadow(0 0 30px rgba(43, 110, 255, 0.3));
+      z-index: 10;
+    }
+    .tools-section .tools-container .tool-icon:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; font-size: 2.6rem; color: rgba(66, 133, 244, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(2) { top: 50%; left: 12%; animation-delay: 0.8s; font-size: 2rem; color: rgba(24, 119, 242, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(3) { top: 20%; left: 22%; animation-delay: 1.6s; font-size: 2.8rem; color: rgba(52, 168, 83, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(4) { top: 65%; left: 28%; animation-delay: 2.4s; font-size: 2.2rem; color: rgba(255, 215, 0, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(5) { top: 10%; left: 38%; animation-delay: 0.4s; font-size: 3rem; color: rgba(255, 107, 107, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(6) { top: 55%; left: 45%; animation-delay: 1.2s; font-size: 2.4rem; color: rgba(108, 92, 231, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(7) { top: 25%; left: 55%; animation-delay: 2.0s; font-size: 2.6rem; color: rgba(255, 149, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(8) { top: 70%; left: 62%; animation-delay: 0.6s; font-size: 2rem; color: rgba(37, 211, 102, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(9) { top: 15%; left: 72%; animation-delay: 1.8s; font-size: 2.8rem; color: rgba(255, 59, 48, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(10) { top: 50%; left: 78%; animation-delay: 2.6s; font-size: 2.2rem; color: rgba(90, 200, 250, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(11) { top: 30%; left: 88%; animation-delay: 0.2s; font-size: 2.4rem; color: rgba(175, 82, 222, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(12) { top: 65%; left: 92%; animation-delay: 1.4s; font-size: 2rem; color: rgba(255, 215, 0, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(13) { top: 8%; left: 48%; animation-delay: 2.2s; font-size: 2.2rem; color: rgba(0, 150, 255, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(14) { top: 78%; left: 18%; animation-delay: 0.8s; font-size: 1.8rem; color: rgba(255, 69, 0, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(15) { top: 45%; left: 2%; animation-delay: 1.0s; font-size: 2rem; color: rgba(0, 200, 200, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(16) { top: 35%; left: 33%; animation-delay: 0.5s; font-size: 1.8rem; color: rgba(255, 20, 147, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(17) { top: 60%; left: 52%; animation-delay: 1.9s; font-size: 2rem; color: rgba(0, 128, 0, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(18) { top: 12%; left: 65%; animation-delay: 0.3s; font-size: 2.6rem; color: rgba(65, 105, 225, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(19) { top: 75%; left: 75%; animation-delay: 2.1s; font-size: 2.2rem; color: rgba(255, 140, 0, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(20) { top: 40%; left: 95%; animation-delay: 1.3s; font-size: 1.8rem; color: rgba(0, 191, 255, 0.4); }
+
+    @keyframes toolFloat {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      25% { transform: translate(10px, -12px) rotate(8deg) scale(1.05); }
+      50% { transform: translate(-8px, 15px) rotate(-5deg) scale(0.95); }
+      75% { transform: translate(15px, 8px) rotate(12deg) scale(1.08); }
+      100% { transform: translate(-5px, -10px) rotate(-3deg) scale(0.98); }
+    }
+
+    @media (max-width: 768px) {
+      .tools-section .tools-container { height: 90px; }
+      .tools-section .tools-container .tool-icon { font-size: 1.6rem !important; }
+      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 1.6rem !important; }
+    }
+    @media (max-width: 576px) {
+      .tools-section .tools-container { height: 70px; }
+      .tools-section .tools-container .tool-icon { font-size: 1.3rem !important; }
+      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 1.3rem !important; }
+    }
 
     /* ── 5 PILLARS ── */
     .pillars-section {
@@ -1073,7 +1146,7 @@
       .flip-card .flip-front .service-icon { font-size: 2rem; }
       .flip-card .flip-front .service-name { font-size: 1.05rem; }
       .flip-card .flip-back .back-title { font-size: 1.05rem; }
-      .plans-section { padding: 3rem 0; }
+      .plans-section { padding: 3rem 0 2rem 0; }
       .plans-section .section-title { font-size: 1.8rem; }
       .plan-card { padding: 1.5rem 1.2rem; }
       .plan-card .plan-price { font-size: 1.6rem; }
@@ -1140,7 +1213,7 @@
       .flip-card .flip-hint { font-size: 0.5rem; }
       .process-section { padding: 2rem 0 4rem 0; }
       .process-section .section-title { font-size: 1.5rem; }
-      .plans-section { padding: 2rem 0; }
+      .plans-section { padding: 2rem 0 1.5rem 0; }
       .plans-section .section-title { font-size: 1.5rem; }
       .plans-section .section-sub { font-size: 0.9rem; margin-bottom: 1.5rem; }
       .plan-card { padding: 1.2rem 1rem; border-radius: 18px; }
@@ -1573,7 +1646,7 @@
   <section class="local-businesses" id="services">
     <div class="container-fluid">
       <div class="section-label">We Grow Local Businesses</div>
-      <div class="section-title">Business Categories We Serve</div>
+      <div class="section-title">30+ Business Categories We Serve</div>
       <div class="marquee-wrap">
         <div class="marquee-track left-to-right" id="marqueeTrack1"></div>
         <div class="marquee-track right-to-left" id="marqueeTrack2"></div>
@@ -2050,6 +2123,34 @@
             <button class="btn-choose" onclick="sendWhatsApp('premium')"><i class="bi bi-whatsapp"></i> Choose Plan</button>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUSTED TOOLS SECTION (NEW) -->
+  <section class="tools-section" id="tools">
+    <div class="container-fluid px-0">
+      <div class="tools-container">
+        <span class="tool-icon"><i class="bi bi-google"></i></span>
+        <span class="tool-icon"><i class="bi bi-meta"></i></span>
+        <span class="tool-icon"><i class="bi bi-graph-up-arrow"></i></span>
+        <span class="tool-icon"><i class="bi bi-bar-chart-fill"></i></span>
+        <span class="tool-icon"><i class="bi bi-pin-map-fill"></i></span>
+        <span class="tool-icon"><i class="bi bi-instagram"></i></span>
+        <span class="tool-icon"><i class="bi bi-facebook"></i></span>
+        <span class="tool-icon"><i class="bi bi-whatsapp"></i></span>
+        <span class="tool-icon"><i class="bi bi-youtube"></i></span>
+        <span class="tool-icon"><i class="bi bi-tiktok"></i></span>
+        <span class="tool-icon"><i class="bi bi-linkedin"></i></span>
+        <span class="tool-icon"><i class="bi bi-coin"></i></span>
+        <span class="tool-icon"><i class="bi bi-robot"></i></span>
+        <span class="tool-icon"><i class="bi bi-cpu"></i></span>
+        <span class="tool-icon"><i class="bi bi-database"></i></span>
+        <span class="tool-icon"><i class="bi bi-cloud-arrow-up"></i></span>
+        <span class="tool-icon"><i class="bi bi-lightning-charge"></i></span>
+        <span class="tool-icon"><i class="bi bi-share-fill"></i></span>
+        <span class="tool-icon"><i class="bi bi-search-heart"></i></span>
+        <span class="tool-icon"><i class="bi bi-megaphone"></i></span>
       </div>
     </div>
   </section>
@@ -2595,11 +2696,9 @@
           maxVisible = idx + 1;
         }
       });
-      // Glow line height
       const total = timelineItems.length;
       const pct = Math.min((maxVisible / total) * 100, 100);
       glowLine.style.height = pct + '%';
-      // Dots
       dots.forEach((dot, idx) => {
         if (idx < maxVisible) {
           dot.classList.add('active');
@@ -2607,7 +2706,6 @@
           dot.classList.remove('active');
         }
       });
-      // Items visibility
       timelineItems.forEach((item, idx) => {
         const rect = item.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
