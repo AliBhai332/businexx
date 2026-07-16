@@ -327,56 +327,8 @@
     .hero-btn.secondary-btn:hover { transform: translateY(-3px) scale(1.03); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: #ffffff; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
     .hero-btns .hero-btn { opacity: 1 !important; visibility: visible !important; display: inline-flex !important; }
 
-    .hero-main-btns {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .hero-main-btns .btn-premium {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
-      padding: 0.7rem 1.8rem;
-      border-radius: 60px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      color: white;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 20, 80, 0.2);
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-    }
-    .hero-main-btns .btn-premium i { transition: transform 0.3s; }
-    .hero-main-btns .btn-premium:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 40px rgba(0, 120, 255, 0.3);
-      border-color: rgba(100, 180, 255, 0.5);
-      background: rgba(255, 255, 255, 0.03);
-    }
-    .hero-main-btns .btn-premium:hover i { transform: translateX(4px); }
-    .hero-main-btns .btn-primary-glow {
-      background: linear-gradient(135deg, #2b6eff, #7b3eff);
-      border: none;
-      color: white;
-      box-shadow: 0 8px 32px rgba(43, 110, 255, 0.3);
-    }
-    .hero-main-btns .btn-primary-glow:hover {
-      background: linear-gradient(135deg, #4a82ff, #9b5eff);
-      box-shadow: 0 12px 48px rgba(43, 110, 255, 0.5);
-      border-color: transparent;
-    }
-
     @media (max-width: 768px) {
       .hero-btns { display: none !important; }
-      .hero-main-btns { display: none !important; }
     }
 
     .scroll-indicator {
@@ -436,6 +388,9 @@
       width: 100%;
       position: relative;
       padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
     }
     .marquee-track {
       display: flex;
@@ -443,10 +398,10 @@
       width: max-content;
     }
     .marquee-track.left-to-right {
-      animation: marqueeScrollLeft 120s linear infinite;
+      animation: marqueeScrollLeft 180s linear infinite;
     }
     .marquee-track.right-to-left {
-      animation: marqueeScrollRight 120s linear infinite;
+      animation: marqueeScrollRight 180s linear infinite;
     }
     .marquee-track:hover { animation-play-state: paused; }
     .marquee-item {
@@ -847,77 +802,88 @@
     .plan-card { opacity: 0; transform: translateY(40px); transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1); }
     .plan-card.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── TRUSTED TOOLS SECTION (NEW) ── */
+    /* ── TRUSTED TOOLS SECTION (ENHANCED) ── */
     .tools-section {
-      padding: 0.8rem 0;
-      background: rgba(11, 13, 25, 0.2);
+      padding: 1.2rem 0;
+      background: rgba(11, 13, 25, 0.4);
       border-top: 1px solid rgba(255, 255, 255, 0.03);
       border-bottom: 1px solid rgba(255, 255, 255, 0.03);
       position: relative;
       z-index: 5;
       overflow: hidden;
     }
+    .tools-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(43, 110, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
     .tools-section .tools-container {
       position: relative;
       width: 100%;
-      height: 120px;
+      height: 130px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 1;
     }
     .tools-section .tools-container .tool-icon {
       position: absolute;
-      font-size: 2.2rem;
-      color: rgba(255, 255, 255, 0.25);
-      transition: all 0.3s ease;
-      animation: toolFloat 12s infinite alternate ease-in-out;
-      filter: drop-shadow(0 0 10px rgba(43, 110, 255, 0.05));
+      font-size: 2.6rem;
+      color: rgba(255, 255, 255, 0.35);
+      transition: all 0.4s ease;
+      animation: toolFloat 14s infinite alternate ease-in-out;
+      filter: drop-shadow(0 0 15px rgba(43, 110, 255, 0.15)) drop-shadow(0 0 30px rgba(43, 110, 255, 0.05));
+      text-shadow: 0 0 30px rgba(43, 110, 255, 0.1);
     }
     .tools-section .tools-container .tool-icon:hover {
-      color: rgba(43, 110, 255, 0.7);
-      transform: scale(1.25);
-      filter: drop-shadow(0 0 30px rgba(43, 110, 255, 0.3));
+      color: rgba(43, 110, 255, 0.9);
+      transform: scale(1.3) rotate(5deg);
+      filter: drop-shadow(0 0 40px rgba(43, 110, 255, 0.5)) drop-shadow(0 0 80px rgba(43, 110, 255, 0.2));
       z-index: 10;
+      text-shadow: 0 0 60px rgba(43, 110, 255, 0.4);
     }
-    .tools-section .tools-container .tool-icon:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; font-size: 2.6rem; color: rgba(66, 133, 244, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(2) { top: 50%; left: 12%; animation-delay: 0.8s; font-size: 2rem; color: rgba(24, 119, 242, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(3) { top: 20%; left: 22%; animation-delay: 1.6s; font-size: 2.8rem; color: rgba(52, 168, 83, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(4) { top: 65%; left: 28%; animation-delay: 2.4s; font-size: 2.2rem; color: rgba(255, 215, 0, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(5) { top: 10%; left: 38%; animation-delay: 0.4s; font-size: 3rem; color: rgba(255, 107, 107, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(6) { top: 55%; left: 45%; animation-delay: 1.2s; font-size: 2.4rem; color: rgba(108, 92, 231, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(7) { top: 25%; left: 55%; animation-delay: 2.0s; font-size: 2.6rem; color: rgba(255, 149, 0, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(8) { top: 70%; left: 62%; animation-delay: 0.6s; font-size: 2rem; color: rgba(37, 211, 102, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(9) { top: 15%; left: 72%; animation-delay: 1.8s; font-size: 2.8rem; color: rgba(255, 59, 48, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(10) { top: 50%; left: 78%; animation-delay: 2.6s; font-size: 2.2rem; color: rgba(90, 200, 250, 0.5); }
-    .tools-section .tools-container .tool-icon:nth-child(11) { top: 30%; left: 88%; animation-delay: 0.2s; font-size: 2.4rem; color: rgba(175, 82, 222, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(12) { top: 65%; left: 92%; animation-delay: 1.4s; font-size: 2rem; color: rgba(255, 215, 0, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(13) { top: 8%; left: 48%; animation-delay: 2.2s; font-size: 2.2rem; color: rgba(0, 150, 255, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(14) { top: 78%; left: 18%; animation-delay: 0.8s; font-size: 1.8rem; color: rgba(255, 69, 0, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(15) { top: 45%; left: 2%; animation-delay: 1.0s; font-size: 2rem; color: rgba(0, 200, 200, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(16) { top: 35%; left: 33%; animation-delay: 0.5s; font-size: 1.8rem; color: rgba(255, 20, 147, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(17) { top: 60%; left: 52%; animation-delay: 1.9s; font-size: 2rem; color: rgba(0, 128, 0, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(18) { top: 12%; left: 65%; animation-delay: 0.3s; font-size: 2.6rem; color: rgba(65, 105, 225, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(19) { top: 75%; left: 75%; animation-delay: 2.1s; font-size: 2.2rem; color: rgba(255, 140, 0, 0.4); }
-    .tools-section .tools-container .tool-icon:nth-child(20) { top: 40%; left: 95%; animation-delay: 1.3s; font-size: 1.8rem; color: rgba(0, 191, 255, 0.4); }
+    .tools-section .tools-container .tool-icon:nth-child(1) { top: 12%; left: 4%; animation-delay: 0s; font-size: 3rem; color: rgba(66, 133, 244, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(2) { top: 48%; left: 10%; animation-delay: 0.7s; font-size: 2.4rem; color: rgba(24, 119, 242, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(3) { top: 18%; left: 20%; animation-delay: 1.4s; font-size: 3.2rem; color: rgba(52, 168, 83, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(4) { top: 65%; left: 26%; animation-delay: 2.1s; font-size: 2.6rem; color: rgba(255, 215, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(5) { top: 8%; left: 36%; animation-delay: 0.3s; font-size: 3.4rem; color: rgba(255, 107, 107, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(6) { top: 55%; left: 42%; animation-delay: 1.0s; font-size: 2.8rem; color: rgba(108, 92, 231, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(7) { top: 22%; left: 52%; animation-delay: 1.8s; font-size: 3rem; color: rgba(255, 149, 0, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(8) { top: 70%; left: 58%; animation-delay: 0.5s; font-size: 2.4rem; color: rgba(37, 211, 102, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(9) { top: 12%; left: 68%; animation-delay: 1.6s; font-size: 3.2rem; color: rgba(255, 59, 48, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(10) { top: 48%; left: 74%; animation-delay: 2.3s; font-size: 2.6rem; color: rgba(90, 200, 250, 0.6); }
+    .tools-section .tools-container .tool-icon:nth-child(11) { top: 28%; left: 84%; animation-delay: 0.2s; font-size: 2.8rem; color: rgba(175, 82, 222, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(12) { top: 62%; left: 90%; animation-delay: 1.2s; font-size: 2.4rem; color: rgba(255, 215, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(13) { top: 6%; left: 46%; animation-delay: 2.0s; font-size: 2.6rem; color: rgba(0, 150, 255, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(14) { top: 76%; left: 16%; animation-delay: 0.8s; font-size: 2.2rem; color: rgba(255, 69, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(15) { top: 42%; left: 2%; animation-delay: 0.9s; font-size: 2.4rem; color: rgba(0, 200, 200, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(16) { top: 32%; left: 30%; animation-delay: 0.4s; font-size: 2.2rem; color: rgba(255, 20, 147, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(17) { top: 58%; left: 50%; animation-delay: 1.7s; font-size: 2.4rem; color: rgba(0, 128, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(18) { top: 10%; left: 62%; animation-delay: 0.3s; font-size: 3rem; color: rgba(65, 105, 225, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(19) { top: 72%; left: 72%; animation-delay: 1.9s; font-size: 2.6rem; color: rgba(255, 140, 0, 0.5); }
+    .tools-section .tools-container .tool-icon:nth-child(20) { top: 38%; left: 92%; animation-delay: 1.1s; font-size: 2.2rem; color: rgba(0, 191, 255, 0.5); }
 
     @keyframes toolFloat {
       0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-      25% { transform: translate(10px, -12px) rotate(8deg) scale(1.05); }
-      50% { transform: translate(-8px, 15px) rotate(-5deg) scale(0.95); }
-      75% { transform: translate(15px, 8px) rotate(12deg) scale(1.08); }
-      100% { transform: translate(-5px, -10px) rotate(-3deg) scale(0.98); }
+      25% { transform: translate(12px, -14px) rotate(8deg) scale(1.06); }
+      50% { transform: translate(-10px, 16px) rotate(-6deg) scale(0.94); }
+      75% { transform: translate(16px, 10px) rotate(12deg) scale(1.08); }
+      100% { transform: translate(-6px, -12px) rotate(-4deg) scale(0.97); }
     }
 
     @media (max-width: 768px) {
-      .tools-section .tools-container { height: 90px; }
-      .tools-section .tools-container .tool-icon { font-size: 1.6rem !important; }
-      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 1.6rem !important; }
+      .tools-section .tools-container { height: 100px; }
+      .tools-section .tools-container .tool-icon { font-size: 2rem !important; }
+      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 2rem !important; }
     }
     @media (max-width: 576px) {
-      .tools-section .tools-container { height: 70px; }
-      .tools-section .tools-container .tool-icon { font-size: 1.3rem !important; }
-      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 1.3rem !important; }
+      .tools-section .tools-container { height: 80px; }
+      .tools-section .tools-container .tool-icon { font-size: 1.6rem !important; }
+      .tools-section .tools-container .tool-icon:nth-child(n) { font-size: 1.6rem !important; }
     }
 
     /* ── 5 PILLARS ── */
@@ -1298,10 +1264,8 @@
               <li><a href="#hero">Home</a></li>
               <li><a href="#growth">Services</a></li>
               <li><a href="#about">About</a></li>
-              
               <li><a href="#process">Process</a></li>
               <li><a href="#plans">Plans</a></li>
-              
               <li><a href="#founder">Founder</a></li>
               <li><a href="#contact">Contact</a></li>
               <li>
@@ -1349,10 +1313,6 @@
             <div class="hero-btns">
               <button class="hero-btn primary-btn" id="freeQuoteBtn"><i class="bi bi-chat-dots"></i> Free Quote</button>
               <button class="hero-btn secondary-btn" id="growBusinessBtn"><i class="bi bi-rocket-takeoff"></i> Grow My Business</button>
-            </div>
-            <div class="hero-main-btns">
-              <button class="btn btn-premium btn-primary-glow" id="getStartedBtn"><i class="bi bi-arrow-right-circle"></i> Get Started</button>
-              <button class="btn btn-premium" id="viewPortfolioBtn"><i class="bi bi-grid-3x3-gap-fill"></i> View Portfolio</button>
             </div>
           </div>
         </div>
@@ -2127,7 +2087,7 @@
     </div>
   </section>
 
-  <!-- TRUSTED TOOLS SECTION (NEW) -->
+  <!-- TRUSTED TOOLS SECTION (ENHANCED) -->
   <section class="tools-section" id="tools">
     <div class="container-fluid px-0">
       <div class="tools-container">
@@ -2279,11 +2239,11 @@
               <div class="ci-value">+92 342 6438552</div>
             </div>
           </div>
-          <div class="contact-info-item" onclick="window.location.href='mailto:info@businexx.online'">
+          <div class="contact-info-item" onclick="window.location.href='mailto:info@businexx.com'">
             <div class="ci-icon"><i class="bi bi-envelope"></i></div>
             <div class="ci-content">
               <div class="ci-label">Email</div>
-              <div class="ci-value"><a href="mailto:info@businexx.online">info@businexx.online</a></div>
+              <div class="ci-value"><a href="mailto:info@businexx.com">info@businexx.com</a></div>
             </div>
           </div>
           <div class="contact-btns">
@@ -2379,7 +2339,7 @@
               <i class="bi bi-whatsapp" style="color: #25d366;"></i> +92 342 6438552
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; color: #b0c8e8; opacity: 0.7; font-size: 0.85rem;">
-              <i class="bi bi-envelope" style="color: #80b4ff;"></i> info@businexx.online
+              <i class="bi bi-envelope" style="color: #80b4ff;"></i> info@businexx.com
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center; color: #b0c8e8; opacity: 0.7; font-size: 0.85rem;">
               <i class="bi bi-clock" style="color: #ffd60a;"></i> Mon-Fri: 9AM - 6PM
@@ -2725,7 +2685,6 @@
     gsap.from('.typing-wrapper', { opacity: 0, y: 20, duration: 0.9, delay: 0.5, ease: 'power2.out' });
     gsap.from('.sub-text', { opacity: 0, y: 20, duration: 0.9, delay: 0.7, ease: 'power2.out' });
     gsap.from('.hero-btn', { opacity: 0, y: 20, duration: 0.7, stagger: 0.15, delay: 1.0, ease: 'power2.out' });
-    gsap.from('.hero-main-btns .btn-premium', { opacity: 0, y: 20, duration: 0.7, stagger: 0.15, delay: 1.2, ease: 'power2.out' });
     gsap.from('.scene-wrap', { opacity: 0, scale: 0.94, duration: 1.2, delay: 0.3, ease: 'power3.out' });
     gsap.from('.scroll-indicator', { opacity: 0, y: 20, duration: 1, delay: 1.6, ease: 'power2.out' });
     gsap.from('.header-logo', { opacity: 0, y: -20, duration: 0.8, delay: 0.2, ease: 'power2.out' });
@@ -2804,12 +2763,6 @@
     });
     document.getElementById('growBusinessBtn').addEventListener('click', () => {
       window.open('https://wa.me/923426438552?text=I%20want%20to%20grow%20my%20business%20with%20Businexx!', '_blank');
-    });
-    document.getElementById('getStartedBtn').addEventListener('click', () => {
-      alert('🚀 Businexx · premium digital growth. Get started with us!');
-    });
-    document.getElementById('viewPortfolioBtn').addEventListener('click', () => {
-      alert('📁 View our portfolio of successful projects.');
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
